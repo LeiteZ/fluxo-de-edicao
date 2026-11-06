@@ -14,7 +14,7 @@ Um script junta, no tempo da sequência, tudo o que acontece:
 
 Cada evento ganha um id estável (que não muda numa rodada nova se o evento não mudou) e a palavra dita naquele instante. O script também mede a **loudness da voz** (em LUFS), que é a base dos níveis.
 
-O Claude lê essa lista, mais a ideia e o storyboard de cada animação. Não precisa abrir quadros nem o código das animações.
+O agente lê essa lista, mais a ideia e o storyboard de cada animação. Não precisa abrir quadros nem o código das animações.
 
 ## 2. Princípios
 1. **O som segue o que se vê.** Evento visível pede som; o que não aparece, não. Jump cut sem mudança de plano é para ser invisível: em geral, sem som. Corte, zoom ou câmera sob uma tela cheia não aparece: sem som.
@@ -49,11 +49,11 @@ O Claude lê essa lista, mais a ideia e o storyboard de cada animação. Não pr
 - **Escolher:** o tempo até o pico tem que caber antes do evento (um whoosh com pico em 0,4 s começa 0,4 s antes); a duração útil, até o próximo evento; a forma combina com o papel; o brilho separa as camadas (grave embaixo, agudo em cima).
 - **Busca por texto:** um modelo de áudio e texto (ex.: CLAP) busca por descrição em inglês ("short bright metallic whoosh"), útil para a nuance.
 - **Faltou som?** Não force um ruim: use o melhor possível ou deixe sem, e anote numa lista de sons que faltam.
-- Sons novos entram por uma pasta de entrada: o Claude confere, separa por categoria, padroniza e atualiza o índice.
+- Sons novos entram por uma pasta de entrada: o agente confere e trabalha em cópias na biblioteca autorizada, separando por categoria, padronizando e atualizando o índice. Os arquivos recebidos são preservados.
 
 ## 4. Gravar e entregar
-- O Claude escreve um rascunho: para cada som, o evento, a camada, o arquivo e o alinhamento (pico, início ou fim). Ajuste fino em dB ou em atraso, quando precisar.
-- Um script acha o arquivo, pula o silêncio do começo, alinha, calcula o nível e a trilha (sem sobrepor sons na mesma trilha) e copia os sons usados para a pasta de assets do vídeo.
+- O agente escreve um rascunho: para cada som, o evento, a camada, o arquivo e o alinhamento (pico, início ou fim). Ajuste fino em dB ou em atraso, quando precisar.
+- Um script acha o arquivo, pula o silêncio do começo, alinha, calcula o nível e a trilha (sem sobrepor sons na mesma trilha) e copia os sons usados para `_CLAUDE/assets/sfx/`, sem alterar a biblioteca ou os originais.
 - Avisos a corrigir antes de mostrar: som não achado, repetido, evento sem principal, dois principais colados, evento que mudou desde a última gravação.
 - Entrega conforme `entrega-no-editor.md`: cada som numa trilha estéreo abaixo da voz, com o nome `sfxNN <som>` e o nível no volume do clipe.
 - **Revisão por número:**

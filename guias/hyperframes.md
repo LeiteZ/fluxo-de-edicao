@@ -1,9 +1,9 @@
 # Construir animações no HyperFrames
 
-O HyperFrames transforma HTML, CSS e GSAP em vídeo, por linha de comando (`npx hyperframes …`). Abaixo, o que foi aprendido apanhando em vídeos reais: o jeito de trabalhar e as armadilhas. Confira os comandos e as opções na documentação da versão em uso: elas mudam.
+O HyperFrames transforma HTML, CSS e GSAP em vídeo, por linha de comando. Use o executável local da versão revisada, instalado na pasta de ferramentas. Abaixo, o que foi aprendido apanhando em vídeos reais: o jeito de trabalhar e as armadilhas. Confira os comandos e as opções na documentação da versão em uso: elas mudam.
 
 ## Jeito de trabalhar
-- **Versão:** a mais nova a cada vídeo novo, **fixa dentro do vídeo** (anotada no estado do vídeo; todo comando leva a versão: `npx --yes hyperframes@<versão> …`). Trocar no meio de um vídeo pode mudar o desenho do que já foi aprovado.
+- **Versão:** reutilize a versão exata revisada e autorizada, anotada em `dependencias.md` e no estado do vídeo. A primeira instalação fica num projeto npm próprio na pasta de ferramentas, com a versão exata no `package.json` e o `package-lock.json` preservado. Execute o binário local pelo caminho registrado (no Windows, use o launcher correspondente), sem resolução automática por `npx`. Se faltar ou divergir, proponha a instalação; não baixe outra versão. Atualização é uma decisão separada, com revisão e teste curto antes de adotar. Trocar no meio de um vídeo pode mudar o desenho aprovado.
 - **Um projeto por animação** (ou por sequência encadeada, como um gancho com várias trocas), dentro da pasta de trabalho do vídeo.
 - **Componha em 1080p e renderize na resolução do vídeo** (ex.: 4K). O desenho é o mesmo, só com mais pixels. Mais rápido para trabalhar e para os snapshots.
 - **Duração exata:** a duração da raiz é `(N − 0,5) / fps`, com `N` = número de frames que a animação ocupa na sequência. O render arredonda `duração × fps` para cima; com a conta direta, alguns itens saem com 1 frame a mais.
@@ -19,7 +19,7 @@ O HyperFrames transforma HTML, CSS e GSAP em vídeo, por linha de comando (`npx 
   - tela cheia: MP4;
   - sobreposição: MOV ProRes 4444, com transparência, que o programa de edição lê.
   - Confira a resolução, a taxa de quadros e o número de frames do arquivo antes de entregar.
-- **Fila em segundo plano:** várias animações renderizam em fila enquanto o Claude constrói a próxima. Referência: ~25 s de render para 7 s de animação em 4K; renderizar em 1080p economiza só ~8 s por animação, porque a maior parte do tempo é fixa (abrir o navegador e carregar a cena).
+- **Fila em segundo plano:** várias animações renderizam em fila enquanto o agente constrói a próxima. Referência: ~25 s de render para 7 s de animação em 4K; renderizar em 1080p economiza só ~8 s por animação, porque a maior parte do tempo é fixa (abrir o navegador e carregar a cena).
 - **Nunca sobrescrever** um render já entregue: `_v01`, `_v02`…
 - **Asset faltando:** construa com um marcador visível no lugar ("ASSET FALTANDO: logo X"), no mesmo tamanho e tempo. Quando o arquivo chegar, troque e renderize de novo só aquela animação.
 - **Texto:** no mínimo 28 px em 1080p (56 px em 4K), para ler no celular, e dentro da área segura (80% do quadro).

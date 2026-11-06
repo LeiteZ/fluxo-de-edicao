@@ -1,6 +1,6 @@
 # Referências e perfil
 
-Sem referências, o Claude anima "no médio". Com elas, ele mede o que a pessoa gosta e transforma em regras do perfil dela. Isso é feito uma vez, e de novo só quando ela quiser atualizar o estilo.
+Sem referências, o agente anima "no médio". Com elas, ele mede o que a pessoa gosta e transforma em regras do perfil dela. Isso é feito uma vez, e de novo só quando ela quiser atualizar o estilo.
 
 ## 1. Juntar
 - De 5 a 10 trechos curtos (5–30 s) de vídeos com animação, câmera ou edição que a pessoa gostaria de ter. Pode ser de canais diferentes.
@@ -10,7 +10,7 @@ Sem referências, o Claude anima "no médio". Com elas, ele mede o que a pessoa 
 ## 2. Olhar (o que se vê)
 - **Folhas de contato densas:** quadros a cada poucos frames, lado a lado, com o tempo em cada um. Mostram como um elemento entra, assenta e sai.
 - **Cortes de cena:** um detector de cenas (ex.: PySceneDetect) separa as tomadas. Para cada cena, uma folha com o começo, o meio e o fim.
-- **Resumo por referência:** uma faixa de 6–8 quadros de cada folha, numa imagem só. É o que o Claude relê depois, sem abrir tudo de novo (economiza muito limite).
+- **Resumo por referência:** uma faixa de 6–8 quadros de cada folha, numa imagem só. É o que o agente relê depois, sem abrir tudo de novo (economiza muito limite).
 
 ## 3. Medir (o que se sente)
 - **Câmera:** zoom, deslocamento e giro quadro a quadro, por fluxo óptico e uma transformação afim global (pontos rastreados + RANSAC). Mostra se a câmera para ou continua andando, e com que curva.

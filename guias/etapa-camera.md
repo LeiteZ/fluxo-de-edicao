@@ -33,7 +33,7 @@ Para o vídeo inteiro ter ritmo sem desenhar cada corte à mão:
 - **Nunca mostrar a borda do quadro:** com escala ≥100%, o deslocamento é limitado pela margem.
 
 ## 5. Plano e revisão
-- O Claude escreve um rascunho com os movimentos numerados (`cam01`, `cam02`…): o quê, onde (palavra, tempo ou corte), duração, curva, de quanto a quanto. As travas vão à parte.
+- O agente escreve um rascunho com os movimentos numerados (`cam01`, `cam02`…): o quê, onde (palavra, tempo ou corte), duração, curva, de quanto a quanto. As travas vão à parte.
 - Um script calcula a base + os movimentos, gera keyframes densos com a curva embutida e avisa sobre conflitos.
 - Revisão por número: "cam07 mais lento", "cam05 mais forte", "cam12 tira", "no s014 não precisa punch".
 - Ajuste de câmera feito à mão no programa não volta para o plano: peça por número.
